@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_pregnancy_calculator" name="Pregnancy Calculator">
+        <!-- oe_structure s_pregnancy_calculator col-sm -->
+        <!-- <div class="s_alert s_alert_md alert-info w-100 clearfix"></div> -->
+        <div class="s_pregnancy_calculator pregnancy_calculator">
+            <div class="container pregnancy_container">
+                <div class="row pregnancy_container">
+                    <span class="text-black">PREGNANCY CALCULATOR</span>
+                </div>
+                <div class="row pregnancy_container">
+                    <div class="col-sm">
+                        <div class="row">
+                            <div class="col-1"><i class="fa fa-calculator"/></div>
+                            <div class="col">
+                                <p>
+                                    To estimate the length of your pregnancy,
+                                    enter the first day of your last period in the
+                                    field below, and then press the 'calculate'
+                                    button to the right of it.
+                                </p>
+                                <div class="col">
+                                    <button class="fa fa-calendar border border-white btn btn-outline-primary btn-lg btn-sm text-white mt-2 mb-2">
+                                        <input data-target=".dateselector" class="dateselector btn btn-outline-primary border-0 text-white" type="button" value="FIRST DAY OF LAST&#13;&#10;MENSTRUAL PERIOD"/>
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button class="calculate btn btn-outline-primary border border-white btn-lg text-white mt-2 mb-2">CALCULATE</button>
+                                </div>
+                                <ol style="padding-left: initial;">LENGTH OF PREGNANCY:<li class="lop" style="list-style: none"/></ol>
+                                <ol style="padding-left: initial;">CONCEPTION DATE:<li class="con_date" style="list-style: none"/></ol>
+                                <ol style="padding-left: initial;">DUE DATE:<li class="due_date" style="list-style: none"/></ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- drag and drop -->
+
+    <!-- <template id="snippet_pregnancy" inherit_id="website.snippets" name="Snippet Pregnancy">
+        <xpath expr="//div[@id='snippet_content']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="cct_snippet_gynecology.s_pregnancy_calculator"
+               t-thumbnail="/cct_snippet_gynecology/static/src/img/snippets_thumbs/calculator-svgrepo-com.svg"/>
+        </xpath>
+    </template> -->
+    <template id="snippets" inherit_id="website.snippets" name="Custom Snippets">
+        <xpath expr="//*[@id='default_snippets']" position="before">
+            <t id="x_theme_snippets">
+                <div id="x_theme_snippets_category" class="o_panel">
+                    <div class="o_panel_header">Theme</div>
+                    <div class="o_panel_body">
+                        <t t-snippet="cct_snippet_gynecology.s_pregnancy_calculator"                                     
+                            t-thumbnail="/cct_snippet_gynecology/static/src/img/snippets_thumbs/calculator-svgrepo-com.svg">
+                            <keywords>Snippet</keywords>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+    
+    <!-- test -->
+    <record id="cct_snippet_gynecology.s_chart_000_css" model="ir.asset">
+        <field name="name">Pregnancy Calculator 000 CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">cct_snippet_gynecology/static/src/snippets/s_pregnancy_calculator/000.scss</field>
+    </record>
+    <!-- <record id="cct_snippet_gynecology.s_chart_000_js" model="ir.asset">
+        <field name="name">Pregnancy Calculator 000 JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">cct_snippet_gynecology/static/src/snippets/s_pregnancy_calculator/000.js</field>
+    </record> -->
+</odoo>
